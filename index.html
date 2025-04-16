@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SagaCalculada</title>
+    <title>✅ SagaCalculada</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
     <section class="design-section">
 
-        <h1>Seja bem-vindo a SagaCalculada</h1>
+        <h1>✅ Seja bem-vindo a SagaCalculada!</h1>
 
         <p>Nome do aluno: <input type="text" name="txtaluno" id="txtaluno"></p>
 
@@ -19,19 +19,27 @@
 
         <p>Desconto: <input type="number" name="txtdesconto" id="txtdesconto"></p>
 
-        <p><input type="button" value="Calcular" onclick="calculo()"></p>
+        <div class="botoes">
 
-        <p><input type="button" value="Limpar" onclick="limpar()"></p>
+            <p><input type="button" value="Calcular" onclick="calculo()"></p>
+
+            <p><input type="button" value="Limpar" onclick="limpar()"></p>
+        </div>
+
+        <div class="botoes">
+            <button onclick="copiarresultado1()" class="botao">Copiar Plano Individual</button>
+
+            <button onclick="copiarresultado2()" class="botao">Copiar Plano em dupla</button>
+        </div>
 
         <div class="res1"></div>
 
         <div class="res2"></div>
 
-        <button onclick="copiarresultado1()" class="botao">Copiar Plano Individual</button>
-        
     </section>
 
     <script src="./codigo.js"></script>
 
 </body>
+
 </html>
