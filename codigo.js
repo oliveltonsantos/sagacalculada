@@ -22,21 +22,15 @@ function calculo() {
 
 function copiarresultado1() {
     var res1 = document.querySelector('div.res1')
-
     var elementoTemporario1 = document.createElement("textarea")
 
-    // Copia apenas o texto, sem HTML (se quiser com HTML, use res.innerHTML)
     elementoTemporario1.value = res1.innerText
-
     document.body.appendChild(elementoTemporario1)
-
     elementoTemporario1.select()
-
     document.execCommand("copy")
-
     document.body.removeChild(elementoTemporario1)
 
-    alert("Resultado copiado!")
+    mostrarToast("Resultado copiado!")
 }
 
 function copiarresultado2() {
@@ -55,7 +49,17 @@ function copiarresultado2() {
 
     document.body.removeChild(elementoTemporario2)
 
-    alert("Resultado copiado!")
+    mostrarToast("Resultado copiado!")
+}
+
+function mostrarToast(mensagem) {
+    var toast = document.getElementById("toast")
+    toast.innerText = mensagem
+    toast.style.display = "block"
+
+    setTimeout(function () {
+        toast.style.display = "none"
+    }, 2000) // esconde depois de 2 segundos
 }
 
 function limpar() {
