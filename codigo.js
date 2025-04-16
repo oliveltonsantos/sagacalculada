@@ -11,12 +11,14 @@ function calculo() {
         window.alert('Insira os dados nos campos abaixo!')
     } else {
         var aulasIndividuais = plano * 3
-        var aulasIndividuaisDesconto = aulasIndividuais - (aulasIndividuais * 10 / 100)
+        var aulasIndividuaisDesconto = aulasIndividuais * 10 / 100
+        var aulasIndividuaisPrecoFinal = aulasIndividuais - aulasIndividuaisDesconto
         var aulasDuplas = (plano * 3) / 2
 
-        res1.innerHTML = `<p>Fala, ${nomeAluno}! Tudo certo? Estou passando para te falar que o valor do plano trimestral com ${desconto}% de desconto é ${aulasIndividuaisDesconto.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}. Bora fechar este pacote?</p>`
+        res1.innerHTML = `<p>Opaaaa! E aí ${nomeAluno} tudo bem? Estou passando para te falar que o valor do plano trimestral com ${desconto}% de desconto é ${aulasIndividuaisPrecoFinal.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}. Ou seja, você economiza ${aulasIndividuaisDesconto.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}. E aí bora fechar e começar sua saga do turco / inglês hoje mesmo? 😁</p>`
 
-        res2.innerHTML = `<p>Fala, ${nomeAluno}! Tudo certo? Estou passando para te falar que o valor do plano trimestral em dupla é de ${aulasDuplas.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })} para cada um. Bora fechar este pacote?</p>`
+        res2.innerHTML = `<p>Opaaaa! E aí ${nomeAluno} tudo bem? Estou passando para te falar que o valor do plano trimestral em dupla é ${aulasDuplas.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })} para cada um. E aí bora fechar e começar sua saga do turco / inglês hoje mesmo? 😁</p>`
+
     }
 }
 
