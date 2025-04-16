@@ -31,6 +31,7 @@ body {
     margin-bottom: 10px;
     outline: none;
     font-size: 16px;
+    text-align: center;
 }
 
 .section-input-botoes {
@@ -58,6 +59,7 @@ h1 {
     font-family: "Bangers", system-ui;
     font-weight: 400;
     font-style: normal;
+    font-size: 35px;
 }
 
 p {
@@ -67,9 +69,9 @@ p {
 div#toast {
     display: none;
     position: fixed;
-    bottom: 20px;
+    top: 20px;
     right: 20px;
-    background-color: #333;
+    background-color: #28292B;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -82,6 +84,11 @@ div#toast {
         display: flex;
         flex-direction: column;
         margin: 10px;
+    }
+
+    h1 {
+        font-size: 30px;
+        text-align: center;
     }
 }
 
