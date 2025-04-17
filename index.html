@@ -21,24 +21,19 @@
 <body>
     <section class="design-section">
 
-        <h1>Seja bem-vindo a Saga Calculada!</h1>
+        <h1>Seja bem-vindo à Saga Calculada!</h1>
 
-        <p>Nome do aluno(a)</p><input type="text" name="txtaluno" id="txtaluno" class="design-input">
-
-        <p>Plano mensal R$</p><input type="number" name="txtplano" id="txtplano" class="design-input">
-
-        <p>Desconto</p><input type="number" name="txtdesconto" id="txtdesconto" class="design-input">
+        <input type="text" name="txtaluno" id="txtaluno" class="design-input" placeholder="Nome do aluno(a)">
+        <input type="number" name="txtplano" id="txtplano" class="design-input" placeholder="Plano mensal R$">
+        <input type="number" name="txtdesconto" id="txtdesconto" class="design-input" placeholder="Desconto (%)">
 
         <div class="section-input-botoes">
-
             <input type="button" value="Calcular" onclick="calculo()" class="botao">
-
             <input type="button" value="Limpar" onclick="limpar()" class="botao">
         </div>
 
         <div class="section-input-botoes">
             <button onclick="copiarresultado1()" class="botao">Copiar Plano Individual</button>
-
             <button onclick="copiarresultado2()" class="botao">Copiar Plano em dupla</button>
         </div>
 
