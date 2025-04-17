@@ -22,34 +22,15 @@ function calculo() {
     }
 }
 
-function copiarresultado1() {
-    var res1 = document.querySelector('div.res1')
-    var elementoTemporario1 = document.createElement("textarea")
+function copiarResultado(seletor) {
+    var elemento = document.querySelector(seletor)
+    var textareaTemporario = document.createElement("textarea")
 
-    elementoTemporario1.value = res1.innerText
-    document.body.appendChild(elementoTemporario1)
-    elementoTemporario1.select()
+    textareaTemporario.value = elemento.innerText
+    document.body.appendChild(textareaTemporario)
+    textareaTemporario.select()
     document.execCommand("copy")
-    document.body.removeChild(elementoTemporario1)
-
-    mostrarToast("Resultado copiado!")
-}
-
-function copiarresultado2() {
-    var res2 = document.querySelector('div.res2')
-
-    var elementoTemporario2 = document.createElement("textarea")
-
-    // Copia apenas o texto, sem HTML (se quiser com HTML, use res.innerHTML)
-    elementoTemporario2.value = res2.innerText
-
-    document.body.appendChild(elementoTemporario2)
-
-    elementoTemporario2.select()
-
-    document.execCommand("copy")
-
-    document.body.removeChild(elementoTemporario2)
+    document.body.removeChild(textareaTemporario)
 
     mostrarToast("Resultado copiado!")
 }
