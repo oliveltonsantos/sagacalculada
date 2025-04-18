@@ -34,4 +34,4 @@ Acesse o site pronto neste link [aqui](https://oliveltonsantos.github.io/sagacal
 
 ### 💬 Sugestões:
 
-Fico aberto a sugestões de melhoria e ideias, caso você tenha alguma basta me enviar uma mensagem no [LinkedIn](https://www.linkedin.com/in/olivelton-santos).
+Fico aberto a sugestões de melhoria e ideias, caso você tenha alguma basta me enviar uma mensagem no [LinkedIn](https://www.linkedin.com/in/oliveltonsantos/).
