@@ -1,6 +1,7 @@
 ### 💡 Sobre o projeto:
 
 A **“Saga Calculada”** começou com uma simples pergunta que fiz a um amigo, professor de idiomas:  
+
 **"Existe algo na sua rotina que envolva cálculos e que poderia ser automatizado?"**  
 
 Ele me explicou que trabalha com um valor fixo para o plano mensal, mas também oferece pacotes fechados de 3 meses, aplicando descontos conforme a necessidade.  
@@ -33,4 +34,4 @@ Acesse o site pronto neste link [aqui](https://oliveltonsantos.github.io/sagacal
 
 ### 💬 Sugestões:
 
-Fico aberto a sugestões de melhoria e ideias, caso você tenha alguma basta me enviar uma mensagem no [LinkedIn](https://www.linkedin.com/in/olivelton-santos).
+Fico aberto a sugestões de melhoria e ideias, caso você tenha alguma basta me enviar uma mensagem no [LinkedIn](https://www.linkedin.com/in/oliveltonsantos/).
