@@ -1,6 +1,7 @@
 ### 💡 Sobre o projeto:
 
 A **“Saga Calculada”** começou com uma simples pergunta que fiz a um amigo, professor de idiomas:  
+
 **"Existe algo na sua rotina que envolva cálculos e que poderia ser automatizado?"**  
 
 Ele me explicou que trabalha com um valor fixo para o plano mensal, mas também oferece pacotes fechados de 3 meses, aplicando descontos conforme a necessidade.  
