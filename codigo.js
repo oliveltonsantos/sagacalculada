@@ -1,3 +1,5 @@
+// Faz o cáculo dos planos de aula
+
 function calculo() {
     var nomeAluno = document.getElementById('txtaluno').value.trim()
     var plano = Number(document.getElementById('txtplano').value)
@@ -22,18 +24,31 @@ function calculo() {
     }
 }
 
+
+// Copia a mensagem para o clipboard
+
 function copiarResultado(seletor) {
     var elemento = document.querySelector(seletor)
-    var textareaTemporario = document.createElement("textarea")
 
-    textareaTemporario.value = elemento.innerText
-    document.body.appendChild(textareaTemporario)
-    textareaTemporario.select()
-    document.execCommand("copy")
-    document.body.removeChild(textareaTemporario)
+    if (!elemento) {
+        console.error("Elemento não encontrado:", seletor)
+        return
+    }
 
-    mostrarToast("Resultado copiado!")
+    var texto = elemento.innerText
+
+    navigator.clipboard.writeText(texto)
+        .then(() => {
+            mostrarToast("Resultado copiado!")
+        })
+        .catch((err) => {
+            console.error("Erro ao copiar:", err)
+            mostrarToast("Erro ao copiar!")
+        })
 }
+
+
+// Mostra um aviso que a mensagem foi copiada com sucesso
 
 function mostrarToast(mensagem) {
     var toast = document.getElementById("toast")
@@ -44,6 +59,9 @@ function mostrarToast(mensagem) {
         toast.style.display = "none"
     }, 2000) // esconde depois de 2 segundos
 }
+
+
+// Limpa as informações inseridas nos campos
 
 function limpar() {
     var nomeAluno = document.getElementById('txtaluno')

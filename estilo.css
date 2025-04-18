@@ -8,10 +8,13 @@ body {
     font-size: 16px;
     color: #ffffff;
     min-height: 100vh;
-    margin: 0;
+
     /* Essa linha remove a margem automática do navegador*/
-    padding: 20px;
+    margin: 0;
+
     /* Importante para evitar corte em telas pequenas */
+    padding: 20px;
+
     display: flex;
     align-items: center;
     justify-content: center;
