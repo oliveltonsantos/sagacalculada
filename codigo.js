@@ -92,12 +92,13 @@ function limpar() {
 
 
 // Trunca número para duas casas decimais sem arredondar (evita erro em valores monetários)
+
 function truncarDoisDecimais(valor) {
     return Math.floor(valor * 100) / 100;
 }
 
-
 // Formata número como moeda brasileira (R$), truncando sem arredondar e garantindo duas casas decimais
+
 function formatarComoMoeda(valor) {
     // Trunca usando sua função confiável
     let truncado = truncarDoisDecimais(valor);
