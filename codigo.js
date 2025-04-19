@@ -6,31 +6,46 @@ function calculo() {
     var meses = Number(document.getElementById('txtmeses').value)
     var desconto = Number(document.getElementById('txtdesconto').value)
     var somenteLetras = /^[A-Za-zÀ-ÿ\s]+$/
-    var res1 = document.querySelector('div.res1')
-    var res2 = document.querySelector('div.res2')
+    var res = document.querySelector('div.res')
 
 
-    if (!somenteLetras.test(nomeAluno) || plano <= 0 || desconto <= 0) {
-        window.alert('Insira os dados nos campos abaixo!')
+
+
+    var planoIndividualEscolhido = document.getElementById('planoindividual').checked
+
+    if (planoIndividualEscolhido) {
+
+        if (!somenteLetras.test(nomeAluno) || plano <= 0 || meses <= 0 || desconto <= 0) {
+            window.alert('Insira os dados nos campos abaixo!')
+        } else {
+            var aulasIndividuais = plano * meses
+            var aulasIndividuaisDesconto = (aulasIndividuais * desconto) / 100
+            var aulasIndividuaisPrecoFinal = aulasIndividuais - aulasIndividuaisDesconto
+
+            res.innerHTML = `<p>Opaaaa! E aí *${nomeAluno}* tudo bem?</p> 
+        
+            <p>Estou passando para te falar que o valor do *plano de ${meses} meses* com *${desconto}% de desconto* é *${formatarComoMoeda(aulasIndividuaisPrecoFinal)}*. Ou seja, você economiza *${formatarComoMoeda(aulasIndividuaisDesconto)}*.</p>
+        
+            <p>E aí bora fechar e começar sua saga do turco / inglês hoje mesmo? 😁</p>`
+        }
+
     } else {
-        var aulasIndividuais = plano * meses
-        var aulasIndividuaisDesconto = (aulasIndividuais * desconto) / 100
-        var aulasIndividuaisPrecoFinal = aulasIndividuais - aulasIndividuaisDesconto
-        var aulasDuplas = (plano * meses) / 2
 
-        res1.innerHTML = `<p>Opaaaa! E aí *${nomeAluno}* tudo bem?</p> 
-        
-        <p>Estou passando para te falar que o valor do *plano de ${meses} meses* com *${desconto}% de desconto* é *${formatarComoMoeda(aulasIndividuaisPrecoFinal)}*. Ou seja, você economiza *${formatarComoMoeda(aulasIndividuaisDesconto)}*.</p>
-        
-        <p>E aí bora fechar e começar sua saga do turco / inglês hoje mesmo? 😁</p>`
+        if (!somenteLetras.test(nomeAluno) || plano <= 0 || meses <= 0) {
+            window.alert('Insira os dados nos campos abaixo!')
+        } else {
+            var aulasDuplas = (plano * meses) / 2
 
-        res2.innerHTML = `<p>Opaaaa! E aí *${nomeAluno}* tudo bem?</p>
-        
-        <p>Estou passando para te falar que o valor do *plano de ${meses} meses* em dupla é *${formatarComoMoeda(aulasDuplas)}* para cada um.</p> 
-        
-        <p>E aí bora fechar e começar sua saga do turco / inglês hoje mesmo? 😁</p>`
+            res.innerHTML = `<p>Opaaaa! E aí *${nomeAluno}* tudo bem?</p>
+            
+            <p>Estou passando para te falar que o valor do *plano de ${meses} meses* em dupla é *${formatarComoMoeda(aulasDuplas)}* para cada um.</p> 
+            
+            <p>E aí bora fechar e começar sua saga do turco / inglês hoje mesmo? 😁</p>`
+        }
+
 
     }
+
 }
 
 
@@ -77,15 +92,13 @@ function limpar() {
     var plano = document.getElementById('txtplano')
     var meses = document.getElementById('txtmeses')
     var desconto = document.getElementById('txtdesconto')
-    var res1 = document.querySelector('div.res1')
-    var res2 = document.querySelector('div.res2')
+    var res = document.querySelector('div.res')
 
     nomeAluno.value = ''
     plano.value = ''
     meses.value = ''
     desconto.value = ''
-    res1.innerHTML = ''
-    res2.innerHTML = ''
+    res.innerHTML = ''
 
     nomeAluno.focus()
 }

@@ -23,6 +23,17 @@
 
         <h1>Seja bem-vindo à Saga Calculada!</h1>
 
+        <div class="tipo-plano">
+            <p>Escolha o plano:</p>
+            <input type="radio" name="planoescolhido" id="planoindividual" checked>
+            <label for="planoindividual" class="radio-label">Plano Individual</label>
+
+            <input type="radio" name="planoescolhido" id="planodupla">
+            <label for="planodupla" class="radio-label">Plano Dupla</label>
+            </p>
+        </div>
+
+
         <input type="text" name="txtaluno" id="txtaluno" class="design-input" placeholder="Nome do aluno(a)">
         <input type="number" name="txtplano" id="txtplano" class="design-input" placeholder="Plano mensal R$">
         <input type="number" name="txtplano" id="txtmeses" class="design-input" placeholder="Meses contratados">
@@ -30,17 +41,11 @@
 
         <div class="section-input-botoes">
             <input type="button" value="Calcular" onclick="calculo()" class="botao">
+            <button onclick="copiarResultado('.res')" class="botao">Copiar mensagem</button>
             <input type="button" value="Limpar" onclick="limpar()" class="botao">
         </div>
 
-        <div class="section-input-botoes">
-            <button onclick="copiarResultado('.res1')" class="botao">Copiar Plano Individual</button>
-            <button onclick="copiarResultado('.res2')" class="botao">Copiar Plano em dupla</button>
-        </div>
-
-        <div class="res1"></div>
-
-        <div class="res2"></div>
+        <div class="res"></div>
 
         <div id="toast">
             Copiado!

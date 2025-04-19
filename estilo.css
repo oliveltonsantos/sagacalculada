@@ -32,6 +32,50 @@ body {
     align-items: center;
 }
 
+.tipo-plano {
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+}
+
+.tipo-plano p {
+    margin: 0px 0px 15px 0px;
+}
+
+/* Esconde o input original */
+input[type="radio"] {
+    display: none;
+}
+
+/* Estilo base do botão falso */
+.radio-label {
+    display: inline-block;
+    border-radius: 8px;
+    border: 1px solid #FFD701;
+    padding: 6px 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.radio-label:hover {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    color: #28292B;
+    transition: all 0.3s ease;
+}
+
+/* Quando o radio estiver selecionado, muda o estilo do label */
+input[type="radio"]:checked+.radio-label {
+    background: #FFD701;
+    color: #28292B;
+    border-radius: 8px;
+    border: 1px solid #FFD701;
+    padding: 6px 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 .design-input {
     background: #F8F9FA;
     border-radius: 8px;
@@ -64,6 +108,7 @@ body {
 .botao:hover {
     background: #ffffff;
     color: #28292B;
+    transition: all 0.3s ease;
 }
 
 h1 {
@@ -90,6 +135,12 @@ div#toast {
 }
 
 @media screen and (max-width: 600px) {
+    .tipo-plano {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
     .section-input-botoes {
         flex-direction: column;
         gap: 10px;
