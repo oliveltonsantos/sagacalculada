@@ -51,7 +51,7 @@ function calculo() {
 
 // Copia a mensagem para o clipboard
 
-function copiarResultado(seletor) {
+function compartilharOuCopiarResultado(seletor) {
     var elemento = document.querySelector(seletor)
 
     if (!elemento) {
@@ -61,14 +61,30 @@ function copiarResultado(seletor) {
 
     var texto = elemento.innerText
 
-    navigator.clipboard.writeText(texto)
+    // Se o dispositivo suporta Web Share API (normalmente celulares)
+    if (navigator.share) {
+        navigator.share({
+            title: "Mensagem de plano de aulas",
+            text: texto,
+        })
         .then(() => {
-            mostrarToast("Resultado copiado!")
+            mostrarToast("Compartilhamento iniciado!")
         })
         .catch((err) => {
-            console.error("Erro ao copiar:", err)
-            mostrarToast("Erro ao copiar!")
-        })
+            console.error("Erro ao compartilhar:", err)
+            mostrarToast("Erro ao compartilhar!")
+        });
+    } else {
+        // Fallback para copiar no desktop
+        navigator.clipboard.writeText(texto)
+            .then(() => {
+                mostrarToast("Texto copiado para a área de transferência!")
+            })
+            .catch((err) => {
+                console.error("Erro ao copiar:", err)
+                mostrarToast("Erro ao copiar!")
+            });
+    }
 }
 
 
