@@ -8,9 +8,6 @@ function calculo() {
     var somenteLetras = /^[A-Za-zÀ-ÿ\s]+$/
     var res = document.querySelector('div.res')
 
-
-
-
     var planoIndividualEscolhido = document.getElementById('planoindividual').checked
 
     if (planoIndividualEscolhido) {
@@ -42,14 +39,11 @@ function calculo() {
             
             <p>E aí bora fechar e começar sua saga do turco / inglês hoje mesmo? 😁</p>`
         }
-
-
     }
-
 }
 
 
-// Copia a mensagem para o clipboard
+// Copia a mensagem para o clipboard e abre a tela de compartilhamento em celulares
 
 function compartilharOuCopiarResultado(seletor) {
     var elemento = document.querySelector(seletor)
@@ -67,18 +61,18 @@ function compartilharOuCopiarResultado(seletor) {
             title: "Mensagem de plano de aulas",
             text: texto,
         })
-        .then(() => {
-            mostrarToast("Compartilhamento iniciado!")
-        })
-        .catch((err) => {
-            console.error("Erro ao compartilhar:", err)
-            mostrarToast("Erro ao compartilhar!")
-        });
+            .then(() => {
+                mostrarToast("Compartilhamento finalizado!")
+            })
+            .catch((err) => {
+                console.error("Erro ao compartilhar:", err)
+                mostrarToast("Erro ao compartilhar!")
+            });
     } else {
         // Fallback para copiar no desktop
         navigator.clipboard.writeText(texto)
             .then(() => {
-                mostrarToast("Texto copiado para a área de transferência!")
+                mostrarToast("Mensagem copiada!")
             })
             .catch((err) => {
                 console.error("Erro ao copiar:", err)
@@ -126,6 +120,7 @@ function truncarDoisDecimais(valor) {
     return Math.floor(valor * 100) / 100;
 }
 
+
 // Formata número como moeda brasileira (R$), truncando sem arredondar e garantindo duas casas decimais
 
 function formatarComoMoeda(valor) {
@@ -140,6 +135,8 @@ function formatarComoMoeda(valor) {
     // Adiciona separadores de milhar e vírgula decimal no estilo BR
     return 'R$ ' + parteInteira.replace(/\B(?=(\d{3})+(?!\d))/g, ".") + ',' + parteDecimal;
 }
+
+
 
 
 
