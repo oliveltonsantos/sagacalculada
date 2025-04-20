@@ -41,6 +41,9 @@ body {
     margin: 0px 0px 15px 0px;
 }
 
+
+/*Mudar a cor do botão de selecionar opção (label)*/
+
 /* Esconde o input original */
 input[type="radio"] {
     display: none;
@@ -75,6 +78,9 @@ input[type="radio"]:checked+.radio-label {
     cursor: pointer;
     font-size: 16px;
 }
+
+/* -------------------------------------------------FIM -------------------------------------------------*/
+
 
 .design-input {
     background: #F8F9FA;
@@ -133,6 +139,8 @@ div#toast {
     opacity: 0.9;
     z-index: 1000;
 }
+
+/* Responsividade em dispositivos móveis */
 
 @media screen and (max-width: 600px) {
     .tipo-plano {
